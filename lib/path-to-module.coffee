@@ -25,7 +25,15 @@ module.exports =
     directoryPath = rootDirectory.getPath()
     return uri.substr(directoryPath.length + 1)
 
+  getAbsolutePath: (file, prefix, extention) ->
+    path = atom.project.rootDirectory.getPath();
+    return path + "/" + prefix + file + extention
+
   module2file: ->
-    module = atom.clipboard.read()
+    prefix = "lib/"
+    ext    = ".pm"
+    module = atom.workspace.activePaneItem.getCursor().selection.getText();
     file = module.replace(/::/g, '/')
     atom.clipboard.write(file)
+    absPath = @getAbsolutePath(file, prefix, ext)
+    atom.workspace.open(absPath);
