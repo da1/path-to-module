@@ -7,6 +7,6 @@
 
 # For more detailed documentation see
 # https://atom.io/docs/latest/advanced/keymaps
-'.workspace':
+'.atom-workspace':
   'ctrl-alt-p': 'path-to-module:file2module'
   'ctrl-alt-m': 'path-to-module:module2file'
