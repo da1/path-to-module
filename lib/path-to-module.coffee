@@ -21,12 +21,12 @@ module.exports =
 
   getRelativePath: ->
     uri = atom.workspace.activePaneItem.getUri()
-    rootDirectory = atom.project.rootDirectory
+    rootDirectory = atom.project.rootDirectories[0]
     directoryPath = rootDirectory.getPath()
     return uri.substr(directoryPath.length + 1)
 
   getAbsolutePath: (file, prefix, extention) ->
-    path = atom.project.rootDirectory.getPath();
+    path = atom.project.rootDirectories[0].getPath();
     return path + "/" + prefix + file + extention
 
   module2file: ->
