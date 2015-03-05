@@ -5,8 +5,8 @@ module.exports =
 
   activate: (state) ->
     @pathToModuleView = new PathToModuleView(state.pathToModuleViewState)
-    atom.workspaceView.command "path-to-module:file2module", => @file2module()
-    atom.workspaceView.command "path-to-module:module2file", => @module2file()
+    atom.commands.add 'atom-workspace', 'path-to-module:file2module', => @file2module()
+    atom.commands.add 'atom-workspace', 'path-to-module:module2file', => @module2file()
 
   deactivate: ->
     @pathToModuleView.destroy()

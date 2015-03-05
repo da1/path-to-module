@@ -7,7 +7,7 @@ class PathToModuleView extends View
       @div "The PathToModule package is Alive! It's ALIVE!", class: "message"
 
   initialize: (serializeState) ->
-    atom.workspaceView.command "path-to-module:toggle", => @toggle()
+    # atom.workspaceView.command "path-to-module:toggle", => @toggle()
 
   # Returns an object that can be retrieved when package is activated
   serialize: ->
@@ -17,8 +17,7 @@ class PathToModuleView extends View
     @detach()
 
   toggle: ->
-    console.log "PathToModuleView was toggled!"
-    if @hasParent()
-      @detach()
-    else
-      atom.workspaceView.append(this)
+    # if @hasParent()
+    #   @detach()
+    # else
+    #   atom.workspaceView.append(this)
