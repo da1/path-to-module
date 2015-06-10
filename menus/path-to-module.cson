@@ -1,7 +1,6 @@
 # See https://atom.io/docs/latest/creating-a-package#menus for more details
-'context-menu':
-  '.overlayer':
-      'Enable path-to-module': 'path-to-module:file2module'
+'.overlayer':
+  'Enable path-to-module': 'path-to-module:file2module'
 
 'menu': [
   {

@@ -3,7 +3,6 @@
   "main": "./lib/path-to-module",
   "version": "0.0.0",
   "description": "A short description of your package",
-  "activationEvents": ["path-to-module:file2module", "path-to-module:module2file"],
   "repository": "https://github.com/atom/path-to-module",
   "license": "MIT",
   "engines": {

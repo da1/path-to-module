@@ -1,23 +1,23 @@
-{View} = require 'atom'
-
 module.exports =
-class PathToModuleView extends View
-  @content: ->
-    @div class: 'path-to-module overlay from-top', =>
-      @div "The PathToModule package is Alive! It's ALIVE!", class: "message"
+class MyPackageView
+  constructor: (serializedState) ->
+    # Create root element
+    @element = document.createElement('div')
+    @element.classList.add('path-to-module')
 
-  initialize: (serializeState) ->
-    # atom.workspaceView.command "path-to-module:toggle", => @toggle()
+    # Create message element
+    message = document.createElement('div')
+    message.textContent = "The MyPackage package is Alive! It's ALIVE!"
+    message.classList.add('message')
+    @element.appendChild(message)
 
-  # Returns an object that can be retrieved when package is activated
-  serialize: ->
+    # Returns an object that can be retrieved when package is activated
+    serialize: ->
 
-  # Tear down any state and detach
-  destroy: ->
-    @detach()
+    # Tear down any state and detach
+    destroy: ->
+      @element.remove()
 
-  toggle: ->
-    # if @hasParent()
-    #   @detach()
-    # else
-    #   atom.workspaceView.append(this)
+    getElement: ->
+      @element
+

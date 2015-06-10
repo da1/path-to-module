@@ -1,4 +1,5 @@
 PathToModuleView = require './path-to-module-view'
+{CompositeDisposable} = require 'atom'
 
 module.exports =
   pathToModuleView: null
@@ -16,8 +17,8 @@ module.exports =
 
   file2module: ->
     relativePath = @getRelativePath()
-    moduleName = relativePath.replace(/^(t\/)?lib\//, '').replace(/\.(pm|t)$/, '').replace(/\//g, '::');
-    atom.workspace.activePaneItem.insertText(moduleName);
+    moduleName = relativePath.replace(/^(t\/)?lib\//, '').replace(/\.(pm|t)$/, '').replace(/\//g, '::')
+    atom.workspace.activePaneItem.insertText(moduleName)
 
   getRelativePath: ->
     uri = atom.workspace.activePaneItem.getUri()
@@ -26,13 +27,13 @@ module.exports =
     return uri.substr(directoryPath.length + 1)
 
   getAbsolutePath: (file, prefix, extention) ->
-    path = atom.project.rootDirectories[0].getPath();
+    path = atom.project.rootDirectories[0].getPath()
     return path + "/" + prefix + file + extention
 
   module2file: ->
     prefix = "lib/"
     ext    = ".pm"
-    module = atom.workspace.activePaneItem.getCursor().selection.getText();
+    module = atom.workspace.getActivePaneItem().getSelectedText()
     file = module.replace(/::/g, '/')
     atom.clipboard.write(file)
     absPath = @getAbsolutePath(file, prefix, ext)
