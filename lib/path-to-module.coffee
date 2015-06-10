@@ -18,10 +18,10 @@ module.exports =
   file2module: ->
     relativePath = @getRelativePath()
     moduleName = relativePath.replace(/^(t\/)?lib\//, '').replace(/\.(pm|t)$/, '').replace(/\//g, '::')
-    atom.workspace.activePaneItem.insertText(moduleName)
+    atom.workspace.getActivePaneItem().insertText(moduleName)
 
   getRelativePath: ->
-    uri = atom.workspace.activePaneItem.getUri()
+    uri = atom.workspace.getActivePaneItem().getURI()
     rootDirectory = atom.project.rootDirectories[0]
     directoryPath = rootDirectory.getPath()
     return uri.substr(directoryPath.length + 1)
