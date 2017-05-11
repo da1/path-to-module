@@ -1,0 +1,34 @@
+{
+  "context-menu": {
+    "atom-text-editor": [
+      {
+        "label": "file2module path-to-module",
+        "command": "path-to-module:file2module"
+      },
+      {
+        "label": "module2file path-to-module",
+        "command": "path-to-module:module2file"
+      }
+    ]
+  },
+  "menu": [
+    {
+      "label": "Packages",
+      "submenu": [
+        {
+          "label": "path-to-module",
+          "submenu": [
+            {
+              "label": "file2module",
+              "command": "path-to-module:file2module"
+            },
+            {
+              "label": "module2file",
+              "command": "path-to-module:module2file"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
