@@ -1,6 +1,6 @@
 {
   "atom-workspace": {
-    "ctrl-alt-p": "path-to-module:file2module",
-    "ctrl-alt-m": "path-to-module:module2file"
+    "ctrl-cmd-p": "path-to-module:file2module",
+    "ctrl-cmd-m": "path-to-module:module2file"
   }
 }
